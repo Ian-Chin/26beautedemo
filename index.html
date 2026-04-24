@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>26 Beaute — A Quiet Ritual of Skin, Kajang</title>
-<meta name="description" content="26 Beaute is a small, unhurried facial atelier in Bandar Sungai Long. No hard sell. Just skin, honestly tended to." />
+<title>26 Beauté — A Quiet Ritual of Skin, Kajang</title>
+<meta name="description" content="26 Beauté is a small, unhurried facial atelier in Bandar Sungai Long. No hard sell. Just skin, honestly tended to." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,7 +117,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .hero .rating{display:flex;align-items:center;gap:8px}
 .hero .rating .stars{color:var(--gold);letter-spacing:2px;font-size:14px}
 
-.hero-art{position:relative;aspect-ratio:3/4;max-height:80vh;justify-self:end;width:100%;}
+.hero-art{position:relative;aspect-ratio:1/1;max-height:75vh;justify-self:end;width:100%;max-width:560px;}
 .hero-art .frame{position:absolute;inset:0;overflow:hidden;border-radius:2px;}
 .hero-art .frame img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(.98);transform:scale(1.02);}
 .hero-art .sticker{
@@ -322,15 +322,28 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
 .reveal.in{opacity:1;transform:none}
 .delay-1{transition-delay:.12s}.delay-2{transition-delay:.24s}.delay-3{transition-delay:.36s}.delay-4{transition-delay:.48s}
 
+/* Hide Elfsight Branding */
+.eapps-link, [class*="eapps-link"], 
+a[href*="elfsight.com"], a[title*="Free Instagram Feed"],
+.elfsight-app-eddff3a4-efe3-423f-a5c7-bb61f212283d a[href*="elfsight"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: -999 !important;
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="#" class="brand">
-    <span class="num">26</span>
-    <span class="wd">Beaute</span>
+  <a href="#" class="brand" style="align-items: center; gap: 14px;">
+    <img src="assets/images/logo.png" alt="26 Beauté Logo" style="height:64px; width:auto; filter: drop-shadow(2px 3px 0px rgba(42,31,28,0.85));" />
+    <span style="display:flex; align-items:baseline; gap:8px;">
+      <span class="num">26</span>
+      <span class="wd" style="color:var(--wood)">Beauté</span>
+    </span>
   </a>
   <ul>
     <li><a href="#about">The Atelier</a></li>
@@ -356,7 +369,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
       tended to.
     </h1>
     <p class="lede">
-      For over a decade, 26 Beaute has held a small, unhurried room in Sungai Long — a place where
+      For over a decade, 26 Beauté has held a small, unhurried room in Sungai Long — a place where
       facials are measured in craft, not commissions. No scripts. No hard sell. Only the slow
       science of clearer, softer skin.
     </p>
@@ -378,7 +391,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
 
   <div class="hero-art reveal">
     <div class="frame">
-      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80" alt="Facial treatment" />
+      <img src="assets/images/hero-before-after.jpg" alt="Before & After Treatment Result" />
     </div>
     <div class="sticker">
       <svg viewBox="0 0 160 160">
@@ -386,7 +399,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
           <path id="circ" d="M80,80 m-60,0 a60,60 0 1,1 120,0 a60,60 0 1,1 -120,0" fill="none"/>
         </defs>
         <text font-family="Manrope" font-size="9" letter-spacing="3" fill="#f2e5d8">
-          <textPath href="#circ">SINCE · A DECADE · IN · KAJANG · A QUIET RITUAL · 26 · BEAUTE ·  </textPath>
+          <textPath href="#circ">SINCE · A DECADE · IN · KAJANG · A QUIET RITUAL · 26 · BEAUTÉ ·  </textPath>
         </text>
       </svg>
       <div class="core">26</div>
@@ -417,13 +430,13 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
 <!-- ABOUT -->
 <section id="about" class="about">
   <div class="imgs reveal">
-    <div class="a"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=80" alt="Skincare products"/></div>
-    <div class="b"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=700&q=80" alt="Spa treatment"/></div>
+    <div class="a"><img src="assets/images/media__1777045758274.jpg" alt="Treatment Before & After"/></div>
+    <div class="b"><img src="assets/images/media__1777045758297.jpg" alt="Treatment Result"/></div>
   </div>
   <div class="reveal delay-1">
     <div class="section-label">The Atelier</div>
     <h2 class="display">A room the size of<br/><em>one conversation.</em></h2>
-    <p>26 Beaute is not a chain. It is a single, soft-lit room at 58-1 Jalan SL 1/3, where the same hands have cleared the same neighbourhood's skin for over ten years.</p>
+    <p>26 Beauté is not a chain. It is a single, soft-lit room at 58-1 Jalan SL 1/3, where the same hands have cleared the same neighbourhood's skin for over ten years.</p>
     <p>We do one face at a time. We close the door. We talk only as much as the treatment needs. Our regulars come because nothing — not a package, not a product, not a subscription — is ever pushed across the counter.</p>
     <p class="sig">— with care, the 26 team</p>
   </div>
@@ -496,7 +509,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
   <div class="tenets reveal delay-1">
     <div class="tenet">
       <div class="k">I. No hard sell, ever.</div>
-      <p>If you leave 26 Beaute, you leave with calmer skin and no bag of products you didn't ask for. Packages are optional and always explained in plain Ringgit.</p>
+      <p>If you leave 26 Beauté, you leave with calmer skin and no bag of products you didn't ask for. Packages are optional and always explained in plain Ringgit.</p>
     </div>
     <div class="tenet">
       <div class="k">II. Price is the price.</div>
@@ -533,7 +546,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
       </div>
       <div class="review">
         <div class="stars">★★★★★</div>
-        <p class="q">I went to 26 Beaute for a RM128 moisturising and soothing treatment. Sharing my first experience — warm, unhurried, and exactly what my skin needed.</p>
+        <p class="q">I went to 26 Beauté for a RM128 moisturising and soothing treatment. Sharing my first experience — warm, unhurried, and exactly what my skin needed.</p>
         <div class="who"><div class="av">X</div><div><div class="n">Xuan</div><div class="meta">Local Guide · 22 reviews</div></div></div>
       </div>
       <div class="review">
@@ -564,7 +577,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
       </div>
       <div class="review" aria-hidden="true">
         <div class="stars">★★★★★</div>
-        <p class="q">I went to 26 Beaute for a RM128 moisturising and soothing treatment. Sharing my first experience — warm, unhurried, and exactly what my skin needed.</p>
+        <p class="q">I went to 26 Beauté for a RM128 moisturising and soothing treatment. Sharing my first experience — warm, unhurried, and exactly what my skin needed.</p>
         <div class="who"><div class="av">X</div><div><div class="n">Xuan</div><div class="meta">Local Guide · 22 reviews</div></div></div>
       </div>
       <div class="review" aria-hidden="true">
@@ -603,7 +616,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
       </div>
       <div class="review">
         <div class="stars">★★★★★</div>
-        <p class="q">I went to 26 Beaute for a RM128 moisturising and soothing treatment. Sharing my first experience — warm, unhurried, and exactly what my skin needed.</p>
+        <p class="q">I went to 26 Beauté for a RM128 moisturising and soothing treatment. Sharing my first experience — warm, unhurried, and exactly what my skin needed.</p>
         <div class="who"><div class="av">X</div><div><div class="n">Xuan</div><div class="meta">Local Guide · 22 reviews</div></div></div>
       </div>
       <div class="review">
@@ -634,7 +647,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
       </div>
       <div class="review" aria-hidden="true">
         <div class="stars">★★★★★</div>
-        <p class="q">I went to 26 Beaute for a RM128 moisturising and soothing treatment. Sharing my first experience — warm, unhurried, and exactly what my skin needed.</p>
+        <p class="q">I went to 26 Beauté for a RM128 moisturising and soothing treatment. Sharing my first experience — warm, unhurried, and exactly what my skin needed.</p>
         <div class="who"><div class="av">X</div><div><div class="n">Xuan</div><div class="meta">Local Guide · 22 reviews</div></div></div>
       </div>
       <div class="review" aria-hidden="true">
@@ -653,14 +666,14 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
 
 <!-- GALLERY -->
 <section class="gallery">
-  <div class="section-label"><span>The Room, The Ritual</span><span class="mono">Gallery · 01 / 06</span></div>
-  <div class="grid">
-    <div class="g reveal"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=80" alt="Facial mask"/></div>
-    <div class="g reveal delay-1"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80" alt="Spa stones"/></div>
-    <div class="g reveal delay-2"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" alt="Beauty model"/></div>
-    <div class="g reveal delay-1"><img src="https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?auto=format&fit=crop&w=1000&q=80" alt="Skincare serum"/></div>
-    <div class="g reveal delay-2"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=80" alt="Beauty details"/></div>
-    <div class="g reveal delay-3"><img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1300&q=80" alt="Facial"/></div>
+  <div class="section-label"><span>Our Instagram</span><a href="https://www.instagram.com/26beaute/" target="_blank" rel="noopener" class="mono" style="text-decoration:underline">@26beaute</a></div>
+  
+  <div style="margin-top: 40px; position: relative; overflow: hidden;" class="reveal">
+    <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-eddff3a4-efe3-423f-a5c7-bb61f212283d" data-elfsight-app-lazy></div>
+    <!-- Physical blocker overlay to cover the free badge -->
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: var(--ivory); z-index: 99; pointer-events: none;"></div>
   </div>
 </section>
 
@@ -687,14 +700,13 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
       <dt>Hours</dt>
     </dl>
     <div class="hours">
-      <div><span>Mon</span><span>10:00 – 19:00</span></div>
-      <div><span>Tue</span><span>10:00 – 19:00</span></div>
-      <div><span>Wed</span><span>10:00 – 19:00</span></div>
-      <div><span>Thu</span><span>10:00 – 19:00</span></div>
-      <div><span>Fri</span><span>10:00 – 19:00</span></div>
-      <div><span>Sat</span><span>10:00 – 18:00</span></div>
-      <div><span>Sun</span><span style="color:var(--rose)">Closed</span></div>
-      <div><span>Public holidays</span><span>By appt.</span></div>
+      <div><span>Monday</span><span>10 am – 6 pm</span></div>
+      <div><span>Tuesday</span><span>10 am – 6 pm</span></div>
+      <div><span>Wednesday</span><span>10 am – 6 pm</span></div>
+      <div><span>Thursday</span><span style="color:var(--rose)">Closed</span></div>
+      <div><span>Friday</span><span>10 am – 6 pm</span></div>
+      <div><span>Saturday</span><span>10 am – 6 pm</span></div>
+      <div><span>Sunday</span><span>10 am – 6 pm</span></div>
     </div>
   </div>
 </section>
@@ -703,7 +715,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
 <footer>
   <div class="top">
     <div>
-      <h3>26 Beaute.<br/><em>Quietly, since 2012.</em></h3>
+      <h3>26 Beauté.<br/><em>Quietly, since 2012.</em></h3>
       <p style="max-width:360px;color:#d9c1b3;font-size:14px">A neighbourhood facial atelier in Bandar Sungai Long, tending to the skin of Kajang one face at a time.</p>
     </div>
     <div class="col">
@@ -727,7 +739,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-siz
     </div>
   </div>
   <div class="bot">
-    <span>© 2026 · 26 Beaute Sdn.</span>
+    <span>© 2026 · 26 Beauté Sdn.</span>
     <span>Kajang · Selangor · Malaysia</span>
   </div>
 </footer>
@@ -747,6 +759,18 @@ if(art){
     art.style.transform = `scale(1.05) translateY(${y*0.08}px)`;
   },{passive:true});
 }
+
+// Remove Elfsight branding robustly
+setInterval(() => {
+  document.querySelectorAll('a[href*="elfsight.com"], a[title*="Free Instagram Feed"], .eapps-link, [class*="eapps-link"]').forEach(el => el.remove());
+  // Handle Shadow DOM if present
+  document.querySelectorAll('.elfsight-app-eddff3a4-efe3-423f-a5c7-bb61f212283d').forEach(el => {
+    if(el.shadowRoot) {
+      el.shadowRoot.querySelectorAll('a[href*="elfsight"]').forEach(a => a.remove());
+      el.shadowRoot.querySelectorAll('[class*="eapps-link"]').forEach(a => a.remove());
+    }
+  });
+}, 500);
 </script>
 </body>
 </html>
