@@ -157,12 +157,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 
 .hero-art .sticker{
-  position:absolute;right:-20px;bottom:-20px;z-index:11;
-  width:140px;height:140px;border-radius:50%;
+  position:absolute;right:-26px;bottom:-26px;z-index:11;
+  width:160px;height:160px;border-radius:50%;
   background:var(--wood);color:var(--ivory);
   display:grid;place-items:center;text-align:center;
   animation:spin 22s linear infinite;
+  box-shadow:0 18px 36px -12px rgba(67,32,28,.45);
 }
+.hero-art .sticker svg{width:100%;height:100%;position:absolute;inset:0}
+.hero-art .sticker .core{position:relative;font-family:"Italiana",serif;font-size:26px;letter-spacing:.08em}
 .hero-art .seal{
   position:absolute;left:-6px;bottom:8%;z-index:5;
   writing-mode:vertical-rl;
@@ -196,7 +199,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   .hero{grid-template-columns:1fr;padding:120px 22px 40px;gap:64px;align-items:start}
   .hero h1{margin-bottom:16px}
   .hero-art{justify-self:center;max-height:500px;aspect-ratio:1/1.1;margin-top:20px}
-  .hero-art .sticker{width:110px;height:110px;right:-10px;bottom:-10px}
+  .hero-art .sticker{width:130px;height:130px;right:-15px;bottom:-15px}
+  .hero-art .sticker .core{font-size:20px}
   .hero .side-tag{display:none}
   .nav{padding:14px 20px}
 }
