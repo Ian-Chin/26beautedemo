@@ -263,7 +263,7 @@ section{padding:120px 40px;position:relative;z-index:2}
 .about h2 em{font-style:italic;color:var(--rose);font-weight:200}
 .about p{max-width:520px;margin-bottom:16px;color:#4a3733;font-size:17px}
 .about .sig{margin-top:28px;font-family:"Italiana",serif;font-size:22px;color:var(--wood)}
-@media(max-width:900px){.about{grid-template-columns:1fr;gap:40px}.about .imgs{max-width:420px;margin-inline:auto}}
+@media(max-width:900px){.about{grid-template-columns:1fr;gap:40px}.about .imgs{width:100%;max-width:420px;margin-inline:auto}}
 
 /* ---------- services ---------- */
 .services{background:linear-gradient(180deg,transparent,var(--cream) 30%,var(--cream) 70%,transparent);}
@@ -767,12 +767,10 @@ a[href*="elfsight.com"], a[title*="Free Instagram Feed"],
 <section class="gallery">
   <div class="section-label"><span>Our Instagram</span><a href="https://www.instagram.com/26beaute/" target="_blank" rel="noopener" class="mono" style="text-decoration:underline">@26beaute</a></div>
   
-  <div style="margin-top: 40px; position: relative; overflow: hidden;" class="reveal">
+  <div style="margin-top: 40px; position: relative;" class="reveal">
     <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <div class="elfsight-app-eddff3a4-efe3-423f-a5c7-bb61f212283d" data-elfsight-app-lazy></div>
-    <!-- Physical blocker overlay to cover the free badge -->
-    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: var(--ivory); z-index: 99; pointer-events: none;"></div>
   </div>
 </section>
 
