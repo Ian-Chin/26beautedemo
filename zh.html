@@ -117,19 +117,91 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .hero .rating{display:flex;align-items:center;gap:8px}
 .hero .rating .stars{color:var(--gold);letter-spacing:2px;font-size:14px}
 
-.hero-art{position:relative;aspect-ratio:1/1;max-height:75vh;justify-self:end;width:100%;max-width:560px;}
-.hero-art .frame{position:absolute;inset:0;overflow:hidden;border-radius:2px;}
-.hero-art .frame img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(.98);}
+.hero-art{position:relative;aspect-ratio:1/1.05;max-height:78vh;justify-self:end;width:100%;max-width:560px;}
+.hero-art .frame{
+  position:absolute;overflow:hidden;border-radius:2px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.6) inset,
+    0 30px 60px -20px rgba(67,32,28,.35),
+    0 18px 30px -18px rgba(67,32,28,.28);
+  background:var(--cream);
+  will-change:transform;
+}
+.hero-art .frame::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(248,241,234,0) 55%,rgba(42,31,28,.18) 100%);
+  mix-blend-mode:multiply;
+}
+.hero-art .frame img{width:100%;height:100%;object-fit:cover;filter:saturate(.94) contrast(.98);}
+.hero-art .frame .tag{
+  position:absolute;left:14px;bottom:12px;z-index:2;
+  font-family:"Italiana",serif;color:var(--ivory);
+  font-size:18px;letter-spacing:.22em;
+  text-shadow:0 1px 12px rgba(42,31,28,.55);
+}
+.hero-art .frame .tag::before{
+  content:"";display:inline-block;width:18px;height:1px;background:var(--ivory);
+  vertical-align:middle;margin-right:10px;opacity:.85;
+}
+
+.hero-art .frame.before{
+  top:0;left:-32%;width:68%;height:76%;
+  transform:rotate(-3deg);
+  animation:floatA 7.5s ease-in-out infinite;
+}
+.hero-art .frame.after{
+  bottom:0;right:10%;width:76%;height:86%;
+  transform:rotate(2.2deg);
+  animation:floatB 9s ease-in-out infinite;
+  z-index:2;
+}
+
+.hero-art .arrow{
+  position:absolute;left:28%;top:46%;z-index:3;
+  width:84px;height:84px;border-radius:50%;
+  background:var(--ivory);color:var(--wood);
+  display:grid;place-items:center;
+  font-family:"Fraunces",serif;font-size:14px;letter-spacing:.06em;
+  box-shadow:0 14px 30px -10px rgba(67,32,28,.35);
+  animation:floatC 6s ease-in-out infinite;
+  text-align:center;line-height:1.2;
+}
+.hero-art .arrow span{display:block;font-size:9px;letter-spacing:.28em;color:var(--rose);margin-top:2px}
+
 .hero-art .sticker{
-  position:absolute;right:-26px;bottom:-26px;
+  position:absolute;right:-26px;bottom:-26px;z-index:4;
   width:160px;height:160px;border-radius:50%;
   background:var(--wood);color:var(--ivory);
   display:grid;place-items:center;text-align:center;
   animation:spin 22s linear infinite;
+  box-shadow:0 18px 36px -12px rgba(67,32,28,.45);
 }
 .hero-art .sticker svg{width:100%;height:100%;position:absolute;inset:0}
 .hero-art .sticker .core{position:relative;font-family:"Italiana",serif;font-size:26px;letter-spacing:.08em}
+
+.hero-art .seal{
+  position:absolute;left:-6px;bottom:8%;z-index:5;
+  writing-mode:vertical-rl;
+  font-size:10px;letter-spacing:.36em;
+  color:var(--wood);opacity:.7;
+}
+
 @keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floatA{
+  0%,100%{transform:rotate(-3deg) translate3d(0,0,0)}
+  50%{transform:rotate(-2.2deg) translate3d(-6px,-10px,0)}
+}
+@keyframes floatB{
+  0%,100%{transform:rotate(2.2deg) translate3d(0,0,0)}
+  50%{transform:rotate(1.4deg) translate3d(8px,-12px,0)}
+}
+@keyframes floatC{
+  0%,100%{transform:translate3d(0,0,0) rotate(-4deg)}
+  50%{transform:translate3d(0,-8px,0) rotate(4deg)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-art .frame.before,.hero-art .frame.after,.hero-art .arrow{animation:none}
+}
 
 .hero .side-tag{
   position:absolute;left:40px;top:50%;transform:rotate(-90deg) translateY(-100%);transform-origin:top left;
@@ -391,9 +463,15 @@ a[href*="elfsight.com"], a[title*="Free Instagram Feed"],
   </div>
 
   <div class="hero-art reveal">
-    <div class="frame">
-      <img src="assets/images/hero-before-after.jpg" alt="Before & After Treatment Result" />
+    <div class="frame before">
+      <img src="assets/images/back.png" alt="护理前" />
+      <div class="tag">Before</div>
     </div>
+    <div class="frame after">
+      <img src="assets/images/after.png" alt="护理后" />
+      <div class="tag">After</div>
+    </div>
+    <div class="seal">原图 · 真实记录</div>
     <div class="sticker">
       <svg viewBox="0 0 160 160">
         <defs>
