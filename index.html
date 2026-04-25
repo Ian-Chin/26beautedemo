@@ -93,6 +93,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   position:relative;padding:130px 40px 40px;
   display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end;
   min-height:100vh;
+  overflow-x:clip;
 }
 .hero .eyebrow{
   display:flex;align-items:center;gap:14px;margin-bottom:28px;
@@ -121,6 +122,12 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   position:relative;aspect-ratio:1/1.1;max-height:78vh;justify-self:end;width:100%;max-width:520px;
   cursor:pointer;-webkit-tap-highlight-color:transparent;
 }
+@media(min-width:1280px){
+  .hero{grid-template-columns:1fr 540px}
+}
+@media(min-width:1700px){
+  .hero{grid-template-columns:1fr 560px;padding-right:clamp(40px,3vw,72px)}
+}
 .hero-art .card{
   position:absolute;overflow:hidden;border-radius:2px;
   background:var(--cream);
@@ -130,9 +137,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 .hero-art .card img{width:100%;height:100%;object-fit:cover;filter:saturate(.94) contrast(.98);}
 .hero-art .card .tag{
-  position:absolute;left:16px;bottom:14px;z-index:2;
+  position:absolute;left:clamp(10px,1.6vw,16px);bottom:clamp(10px,1.4vw,14px);z-index:2;
   font-family:"Italiana",serif;color:var(--ivory);
-  font-size:14px;letter-spacing:.22em;text-transform:uppercase;
+  font-size:clamp(11px,1.3vw,14px);letter-spacing:.22em;text-transform:uppercase;
   text-shadow:0 1px 12px rgba(0,0,0,.45);
   opacity:0;transition:opacity .5s ease .25s;
 }
@@ -145,9 +152,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 
 .hero-art .hover-prompt{
-  position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:7;
-  background:var(--ivory);color:var(--wood);padding:10px 18px;border-radius:99px;
-  font-family:"Italiana",serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  position:absolute;left:50%;bottom:clamp(14px,2.4vw,22px);transform:translateX(-50%);z-index:7;
+  background:var(--ivory);color:var(--wood);padding:clamp(8px,1vw,10px) clamp(14px,1.8vw,18px);border-radius:99px;
+  font-family:"Italiana",serif;font-size:clamp(10px,1vw,11px);letter-spacing:.18em;text-transform:uppercase;
   box-shadow:0 10px 30px rgba(0,0,0,.18);
   pointer-events:none;transition:opacity .4s ease;
   animation:pulsePrompt 2.4s infinite;
@@ -155,11 +162,11 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 .hero-art.is-open .hover-prompt{opacity:0;}
 .hero-art.is-open .card.before{
-  width:88%;height:78%;top:0;left:0;transform:translate(-78%,-22%) rotate(-5deg);
+  width:70%;height:62%;top:0;left:0;transform:translate(-40%,-12%) rotate(-5deg);
 }
 .hero-art.is-open .card.after{
-  width:88%;height:78%;top:22%;left:12%;
-  transform:translate(-22%,-8%) rotate(5deg);opacity:1;transition-delay:.15s;
+  width:70%;height:62%;top:22%;left:12%;
+  transform:translate(14%,2%) rotate(5deg);opacity:1;transition-delay:.15s;
 }
 .hero-art.is-open .card .tag{opacity:1;}
 
@@ -169,15 +176,16 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 
 .hero-art .sticker{
-  position:absolute;right:-26px;bottom:-26px;z-index:11;
-  width:160px;height:160px;border-radius:50%;
+  position:absolute;
+  right:clamp(-26px,-2vw,-12px);bottom:clamp(-26px,-2vw,-12px);z-index:11;
+  width:clamp(110px,15vw,160px);height:clamp(110px,15vw,160px);border-radius:50%;
   background:var(--wood);color:var(--ivory);
   display:grid;place-items:center;text-align:center;
   animation:spin 22s linear infinite;
   box-shadow:0 18px 36px -12px rgba(67,32,28,.45);
 }
 .hero-art .sticker svg{width:100%;height:100%;position:absolute;inset:0}
-.hero-art .sticker .core{position:relative;font-family:"Italiana",serif;font-size:26px;letter-spacing:.08em}
+.hero-art .sticker .core{position:relative;font-family:"Italiana",serif;font-size:clamp(20px,2.2vw,26px);letter-spacing:.08em}
 
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes floatA{
@@ -204,11 +212,17 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;padding:120px 22px 40px;gap:64px;align-items:start}
   .hero h1{margin-bottom:16px}
-  .hero-art{justify-self:center;max-height:500px;aspect-ratio:1/1.1;margin-top:20px}
-  .hero-art .sticker{width:130px;height:130px;right:-15px;bottom:-15px}
-  .hero-art .sticker .core{font-size:20px}
+  .hero-art{justify-self:center;max-height:500px;aspect-ratio:1/1.1;margin-top:20px;max-width:min(420px,90vw)}
+  .hero-art .sticker{right:-12px;bottom:-12px}
   .hero .side-tag{display:none}
   .nav{padding:14px 20px}
+  .hero-art.is-open .card.before{transform:translate(-22%,-18%) rotate(-5deg)}
+  .hero-art.is-open .card.after{transform:translate(28%,-6%) rotate(5deg)}
+}
+@media(max-width:480px){
+  .hero-art{max-width:88vw;margin-top:8px}
+  .hero-art.is-open .card.before{transform:translate(-14%,-14%) rotate(-4deg)}
+  .hero-art.is-open .card.after{transform:translate(32%,-4%) rotate(4deg)}
 }
 
 .visit-media{display:flex;gap:16px;margin-bottom:24px}
@@ -387,6 +401,77 @@ footer .col a,footer .col p{display:block;font-size:14px;color:#ece0d4;margin-bo
 footer .col a:hover{color:var(--peach)}
 footer .bot{display:flex;justify-content:space-between;padding-top:24px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#c8b6aa}
 @media(max-width:900px){footer .top{grid-template-columns:1fr 1fr;gap:30px}footer .bot{flex-direction:column;gap:10px}}
+
+/* ---------- small-mobile responsive ---------- */
+@media(max-width:640px){
+  /* nav */
+  .nav{padding:12px 16px;gap:10px}
+  .nav .brand img{height:44px !important}
+  .nav .brand .num{font-size:22px}
+  .nav .brand .wd{font-size:15px}
+  .nav .book{padding:8px 12px;font-size:10px;letter-spacing:.14em}
+
+  /* hero */
+  .hero{padding:108px 18px 32px;gap:44px;min-height:auto}
+  .hero h1{font-size:clamp(44px,12vw,72px)}
+  .hero .lede{font-size:16px;margin-bottom:28px}
+  .hero .meta{gap:20px;padding-top:18px}
+  .hero .meta .v{font-size:16px}
+
+  /* marquee */
+  .marquee span{font-size:20px;gap:36px}
+  .marquee .track{gap:36px;padding:16px 0}
+
+  /* sections */
+  section{padding:64px 18px}
+
+  /* about */
+  .about p{font-size:15.5px}
+  .about .sig{font-size:18px;margin-top:20px}
+
+  /* services */
+  .services .head{margin-bottom:36px;gap:16px}
+  .menu .row{grid-template-columns:32px 1fr 96px;gap:10px;padding:20px 0}
+  .menu .num{font-size:16px}
+  .menu .name{font-size:17px}
+  .menu .price{font-size:17px}
+  .menu .price small{font-size:10px;letter-spacing:.08em}
+  .menu .tag{display:inline-block;margin-left:0;margin-top:6px}
+
+  /* philosophy */
+  .philo{padding:64px 18px;gap:32px}
+  .philo .tenet .k{font-size:20px}
+  .philo .tenet p{font-size:15px}
+  .philo .tenets{gap:24px;margin-top:8px}
+
+  /* reviews */
+  .reviews{padding:64px 18px}
+  .reviews h2{margin-bottom:36px}
+  .review{flex:0 0 80vw;max-width:340px;padding:22px;gap:14px}
+  .review .q{font-size:15.5px}
+
+  /* gallery */
+  .gallery{padding:64px 18px}
+  .gallery .section-label{flex-wrap:wrap;gap:8px}
+
+  /* visit */
+  .visit{padding:64px 18px;gap:32px}
+  .visit .card{padding:22px}
+  .visit-media{flex-direction:column;gap:12px}
+  .visit-media iframe,.visit-media img{height:180px !important}
+  .visit .card dd{font-size:17px;margin-bottom:18px}
+  .visit .cta{gap:10px}
+  .btn{padding:14px 22px;font-size:10px;letter-spacing:.2em}
+  .visit .hours{grid-template-columns:1fr;gap:0}
+  .visit .hours div{font-size:13px}
+
+  /* footer */
+  footer{padding:56px 18px 28px}
+  footer .top{grid-template-columns:1fr;gap:28px;padding-bottom:36px}
+  footer h3{font-size:28px;margin-bottom:14px}
+  footer::before{font-size:240px;right:-20px;bottom:-70px}
+  footer .bot{font-size:10px;letter-spacing:.16em;gap:8px}
+}
 
 /* ---------- reveal ---------- */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
