@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://26beaute.com/sitemap.xml

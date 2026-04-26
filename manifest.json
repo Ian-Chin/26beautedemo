@@ -1,0 +1,21 @@
+{
+  "name": "26 Beauté",
+  "short_name": "26 Beauté",
+  "description": "A quiet facial atelier in Bandar Sungai Long, Kajang.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f8f1ea",
+  "theme_color": "#f8f1ea",
+  "icons": [
+    {
+      "src": "assets/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

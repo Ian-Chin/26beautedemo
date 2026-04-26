@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- Replace https://26beaute.com/ with your actual domain -->
+    <url>
+        <loc>https://26beaute.com/index.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://26beaute.com/index.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://26beaute.com/zh.html"/>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://26beaute.com/zh.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://26beaute.com/index.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://26beaute.com/zh.html"/>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
